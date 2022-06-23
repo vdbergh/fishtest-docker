@@ -18,7 +18,7 @@ RUN addgroup -g 1000 -S fishtest \
 ADD ./cutechess-cli /opt/fishtest/worker/testing/
 
 RUN chmod 0777 /opt/fishtest/worker/ && chown -R fishtest:fishtest /opt/fishtest/ \
-&& chown root:root /opt/fishtest/worker/testing/cutechess-cli && chmod 0711 /opt/fishtest/worker/testing/cutechess-cli
+&& chmod 0711 /opt/fishtest/worker/testing/cutechess-cli
 
 USER fishtest
 
