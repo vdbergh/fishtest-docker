@@ -4,7 +4,7 @@
 # Import Image : docker load -i fishtest.tar.xz && rm -f fishtest.tar.xz
 # You may need sudo to run docker.
 
-FROM alpine:edge
+FROM alpine:3.16
 
 RUN addgroup -g 1000 -S fishtest \
 && adduser -u 1000 -S -D -H -G fishtest -s /sbin/nologin fishtest \
