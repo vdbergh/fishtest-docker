@@ -9,7 +9,7 @@ FROM alpine:3.16
 RUN addgroup -g 1000 -S fishtest \
 && adduser -u 1000 -S -D -H -G fishtest -s /sbin/nologin fishtest \
 && apk update \
-&& apk add python3 make g++ wget ca-certificates \
+&& apk add python3 make g++ wget ca-certificates nano \
 && update-ca-certificates \
 && cd /opt/ \
 && wget https://github.com/vdbergh/fishtest/archive/master.zip \
