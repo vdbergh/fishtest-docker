@@ -12,13 +12,10 @@ RUN addgroup -g 1000 -S fishtest \
 && apk add python3 make g++ wget ca-certificates nano \
 && update-ca-certificates \
 && cd /opt/ \
-&& wget https://github.com/vdbergh/fishtest/archive/master.zip \
+&& wget https://github.com/glinscott/fishtest/archive/master.zip \
 && unzip master.zip && rm -f master.zip && mv fishtest-master fishtest 
 
-ADD ./cutechess-cli /opt/fishtest/worker/testing/
-
-RUN chmod 0777 /opt/fishtest/worker/ && chown -R fishtest:fishtest /opt/fishtest/ \
-&& chmod 0711 /opt/fishtest/worker/testing/cutechess-cli
+RUN chmod 0777 /opt/fishtest/worker/ && chown -R fishtest:fishtest /opt/fishtest/
 
 USER fishtest
 
