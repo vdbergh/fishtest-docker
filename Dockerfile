@@ -15,7 +15,11 @@ RUN addgroup -g 1000 -S fishtest \
 && wget https://github.com/glinscott/fishtest/archive/master.zip \
 && unzip master.zip && rm -f master.zip && mv fishtest-master fishtest 
 
-RUN chmod 0777 /opt/fishtest/worker/ && chown -R fishtest:fishtest /opt/fishtest/
+RUN chmod 0777 /opt/fishtest/worker/ \
+&& chown -R fishtest:fishtest /opt/fishtest/ \
+&& rm -R /opt/fishtest/server \
+&& rm /opt/fishtest/test_worker.sh \
+&& rm /opt/fishtest/test_server.sh
 
 USER fishtest
 
