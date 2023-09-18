@@ -17,9 +17,9 @@ RUN addgroup -g 1000 -S fishtest \
 
 RUN chmod 0777 /opt/fishtest/worker/ \
 && chown -R fishtest:fishtest /opt/fishtest/ \
-&& rm -R /opt/fishtest/server \
-&& rm /opt/fishtest/test_worker.sh \
-&& rm /opt/fishtest/test_server.sh
+&& rm -Rf /opt/fishtest/server \
+&& rm -f /opt/fishtest/test_worker.sh \
+&& rm -f /opt/fishtest/test_server.sh
 
 USER fishtest
 
